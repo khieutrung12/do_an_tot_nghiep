@@ -1,0 +1,16 @@
+{
+    "@metadata": {
+        "authors": [
+            "DTHNhung"
+        ],
+        "last-updated": "2022-03-13",
+        "locale": "vi"
+    },
+    "sure": "Bạn có chắc chắn?",
+    "cancel": "Hủy",
+    "Delete": "Xóa",
+    "want": "Bạn muốn",
+    "dlt": "xóa",
+    "this_voucher": "phiếu giảm giá này không?",
+    "vouchers": "phiếu giảm giá không?"
+}

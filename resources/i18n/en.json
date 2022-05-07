@@ -1,0 +1,16 @@
+{
+    "@metadata": {
+        "authors": [
+            "DTHNhung"
+        ],
+        "last-updated": "2022-03-13",
+        "locale": "en"
+    },
+    "sure": "Are you sure?",
+    "cancel": "Cancel",
+    "Delete": "Delete",
+    "want": "You want to",
+    "dlt": "delete",
+    "this_voucher": "this voucher",
+    "vouchers": "vouchers"
+}
