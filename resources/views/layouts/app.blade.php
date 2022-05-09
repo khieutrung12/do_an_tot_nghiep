@@ -49,7 +49,7 @@
         <!-- copyright -->
         <div class="bg-gray-800 py-4 m-auto">
             <div class="container flex items-center justify-between m-auto">
-                <p class="text-white">© TECHNOLOGY WORLD - All Rights
+                <p class="text-white">© GEAR STORE - All Rights
                     Reserved</p>
                 <div>
                     <img src="{{ asset('images/methods.png') }}"

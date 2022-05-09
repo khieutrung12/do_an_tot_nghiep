@@ -81,10 +81,6 @@
                         class="text-gray-200 hover:text-white transition">
                         {{ __('titles.About us') }}
                     </a>
-                    <a href="#"
-                        class="text-gray-200 hover:text-white transition">
-                        {{ __('titles.Contact us') }}
-                    </a>
                 </div>
                 <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
                     <span

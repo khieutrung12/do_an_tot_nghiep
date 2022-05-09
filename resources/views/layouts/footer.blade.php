@@ -4,7 +4,7 @@
             <!-- footer text -->
             <div class="space-y-8 xl:col-span-1">
                 <span class="text-lg font-semibold text-teal-800">
-                    TECHNOLOGY WORLD
+                    GEAR STORE
                 </span>
                 <p class="text-gray-500 text-base">
                     Lorem ipsum dolor sit amet consectetur <br />

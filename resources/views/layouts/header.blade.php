@@ -2,8 +2,8 @@
     <div class="container flex items-center space-x-56 m-auto">
         <!-- logo -->
         <a href="{{ route('home') }}"
-            class="text-lg font-bold text-teal-800 no-underline">
-            TECHNOLOGY WORLD
+            class="text-lg font-bold text-teal-800 no-underline" style="width: 206px;">
+            GEAR STORE
         </a>
         <!-- logo end -->
         <!-- searchbar -->

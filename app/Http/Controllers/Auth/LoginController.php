@@ -58,7 +58,7 @@ class LoginController extends Controller
         $compare = auth()->attempt([
             'email' => $request->input('email'),
             'password' => $request->input('password'),
-        ]);
+        ], $request->remember);
 
         if ($compare) {
             if (auth()->user()->role_id == config('auth.roles.admin')) {
@@ -67,7 +67,7 @@ class LoginController extends Controller
                 return redirect()->route('home');
             }
         }
-        
+
         return redirect()
             ->route('login')
             ->with('message', __('messages.login-fail'));
