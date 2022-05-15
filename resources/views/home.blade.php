@@ -2,17 +2,20 @@
 
 @section('content')
     <!-- banner -->
-    <div class="bg-head bg-cover bg-no-repeat bg-center pt-20 pb-40 relative m-auto">
+    <div class="bg-head bg-cover bg-no-repeat bg-center pt-20 pb-40 relative m-auto"
+        style="margin-top: -179px;padding-bottom: 22rem;padding-top: 6rem;">
         <div class="container m-auto">
             <!-- banner content -->
-            <h1 class="xl:text-6xl md:text-5xl text-4xl text-white font-bold mb-8">
-                Technology Is Best <br class="hidden sm:block"> When It Brings People Together
-            </h1>
+            {{-- <h1 class="xl:text-6xl md:text-5xl text-4xl text-white font-bold mb-8">
+                Technology Is Best <br class="hidden sm:block"> When It Brings People
+                Together
+            </h1> --}}
             <!-- banner button -->
             <div class="mt-36">
-                <a href="{{ route('shop') }}" class="text-xl bg-indigo-900 border border-indigo-900 text-white px-8 py-3 font-medium rounded-md uppercase hover:bg-gray-200
-               hover:text-indigo-900 transition">
-                    {{ __('titles.Shop now') }}
+                <a href="{{ route('shop') }}"
+                    class="text-xl bg-indigo-900 border border-indigo-900 text-white px-8 py-3 font-medium rounded-md uppercase hover:bg-gray-200
+               hover:text-indigo-900 transition hidden">
+                    {{-- {{ __('titles.Shop now') }} --}}
                 </a>
             </div>
             <!-- banner button end -->
@@ -23,35 +26,45 @@
 
     <!-- features -->
     <div class="container py-16 m-auto">
-        <div class="lg:w-10/12 grid md:grid-cols-3 gap-3 lg:gap-6 mx-auto justify-center">
+        <div
+            class="lg:w-10/12 grid md:grid-cols-3 gap-3 lg:gap-6 mx-auto justify-center">
 
             <!-- single feature -->
             <div
                 class="border-indigo-900 border rounded-sm px-8 lg:px-3 lg:py-6 py-4 flex justify-center items-center gap-5 bg-white">
-                <img src="{{ asset('images/icons/freeship.png') }}" class="lg:w-12 w-10 h-12 object-contain">
+                <img src="{{ asset('images/icons/freeship.png') }}"
+                    class="lg:w-12 w-10 h-12 object-contain">
                 <div>
-                    <h4 class="font-medium capitalize text-lg">{{ __('titles.free shipping') }}</h4>
-                    <p class="text-gray-500 text-xs lg:text-sm">{{ __('titles.Order over $200') }}</p>
+                    <h4 class="font-medium capitalize text-lg">
+                        {{ __('titles.free shipping') }}</h4>
+                    <p class="text-gray-500 text-xs lg:text-sm">
+                        {{ __('titles.Order over $200') }}</p>
                 </div>
             </div>
             <!-- single feature end -->
             <!-- single feature -->
             <div
                 class="border-indigo-900 border rounded-sm px-8 lg:px-3 lg:py-6 py-4 flex justify-center items-center gap-5 bg-white">
-                <img src="{{ asset('images/icons/moneyreturn.png') }}" class="lg:w-12 w-10 h-12 object-contain">
+                <img src="{{ asset('images/icons/moneyreturn.png') }}"
+                    class="lg:w-12 w-10 h-12 object-contain">
                 <div>
-                    <h4 class="font-medium capitalize text-lg">{{ __('titles.Money returns') }}</h4>
-                    <p class="text-gray-500 text-xs lg:text-sm">{{ __('titles.30 Days money return') }}</p>
+                    <h4 class="font-medium capitalize text-lg">
+                        {{ __('titles.Money returns') }}</h4>
+                    <p class="text-gray-500 text-xs lg:text-sm">
+                        {{ __('titles.30 Days money return') }}</p>
                 </div>
             </div>
             <!-- single feature end -->
             <!-- single feature -->
             <div
                 class="border-indigo-900 border rounded-sm px-8 lg:px-3 lg:py-6 py-4 flex justify-center items-center gap-5 bg-white">
-                <img src="{{ asset('images/icons/support.png') }}" class="lg:w-12 w-10 h-12 object-contain">
+                <img src="{{ asset('images/icons/support.png') }}"
+                    class="lg:w-12 w-10 h-12 object-contain">
                 <div>
-                    <h4 class="font-medium capitalize text-lg">{{ __('titles.24/7 Support') }}</h4>
-                    <p class="text-gray-500 text-xs lg:text-sm">{{ __('titles.Customer support') }}</p>
+                    <h4 class="font-medium capitalize text-lg">
+                        {{ __('titles.24/7 Support') }}</h4>
+                    <p class="text-gray-500 text-xs lg:text-sm">
+                        {{ __('titles.Customer support') }}</p>
                 </div>
             </div>
             <!-- single feature end -->
@@ -62,10 +75,12 @@
     <!-- top new arrival -->
     <div class="container pb-16 m-auto">
         <div class="flex ">
-            <h2 class="text-2xl md:text-3xl font-medium text-gray-800 uppercase mb-6">
+            <h2
+                class="text-2xl md:text-3xl font-medium text-gray-800 uppercase mb-6">
                 {{ __('titles.top-new-arrival') }}
             </h2>
-            <a href="{{ route('shop') }}" class=" text-indigo-900 flex items-center justify-end flex-grow">
+            <a href="{{ route('shop') }}"
+                class=" text-indigo-900 flex items-center justify-end flex-grow">
                 {{ __('titles.see-more') }}
                 <i class="fa-solid fa-angle-right"></i>
             </a>
@@ -73,11 +88,13 @@
         <!-- product wrapper -->
         <div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-6">
             @foreach ($topNew as $product)
-                <div class="button-product rounded bg-white shadow-2xl overflow-hidden">
+                <div
+                    class="button-product rounded bg-white shadow-2xl overflow-hidden">
                     <div class="relative">
                         <img src="{{ asset('images/uploads/products/' . $product->image_thumbnail) }}"
                             class="w-80 h-80">
-                        <div class="product absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center gap-2 opacity-0 transition">
+                        <div
+                            class="product absolute inset-0 bg-black bg-opacity-25 flex items-center justify-center gap-2 opacity-0 transition">
                             <a href="{{ route('show', $product->slug) }}"
                                 class="text-white text-lg w-9 h-9 rounded-full bg-indigo-900 hover:bg-gray-800 transition flex items-center justify-center">
                                 <i class="fas fa-search"></i>

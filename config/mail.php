@@ -92,8 +92,8 @@ return [
     */
 
     'from' => [
-        'address' => 'damthihongnhung2ktn@gmail.com',
-        'name' => 'TECHNOLOGY WORLD',
+        'address' => 'gearstore@gmail.com',
+        'name' => 'GEAR STORE',
     ],
 
     /*

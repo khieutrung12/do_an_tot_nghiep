@@ -1,39 +1,49 @@
 import Echo from "laravel-echo";
 window.Echo = new Echo({
-    broadcaster: 'pusher',
+    broadcaster: "pusher",
     key: process.env.MIX_PUSHER_APP_KEY,
     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-    encrypted: true
+    encrypted: true,
 });
 
-$(document).ready(function() {
-      if(userID) {
-          window.Echo.private(`order.${userID}`)
-          .notification((notification) => {
-                showNotifications(notification, '#notifications');
-                var notificationsWrapper = $('.dropdown-notifications');
-                var notificationsToggle = notificationsWrapper.find('a[data-toggle]');
-                var notificationsCountElem = notificationsToggle.find('i[data-count]');
-                var notificationsCount = parseInt(notificationsCountElem.data('count'));
-                notificationsCount += 1;
-                notificationsCountElem.attr('data-count', notificationsCount);
-            });
+var countAudio = 0;
+$(document).mousemove(function () {
+    $(document).click(function () {
+        if (countAudio == 0) {
+            document.getElementById("audio").play();
+            countAudio += 1;
+        }
+    });
+});
+
+var notificationsWrapper = $(".dropdown-notifications");
+var notificationsToggle = notificationsWrapper.find("a[data-toggle]");
+var notificationsCountElem = notificationsToggle.find("i[data-count]");
+var notificationsCount = parseInt(notificationsCountElem.data("count"));
+$(document).ready(function () {
+    if (userID) {
+        window.Echo.private(`order.${userID}`).notification((notification) => {
+            showNotifications(notification, "#notifications");
+            notificationsCount += 1;
+            notificationsCountElem.attr("data-count", notificationsCount);
+            audio.muted = false;
+            document.getElementById("audio").play();
+        });
     }
-  
 });
 
 function showNotifications(notification, target) {
-    if(notification.data) {  
+    if (notification.data) {
         $(target).prepend(makeNotification(notification));
     }
 }
 
 // Make a single notification string
 function makeNotification(notification) {
-    var locale = document.documentElement.lang ;
-    if (locale == 'vi') {
+    var locale = document.documentElement.lang;
+    if (locale == "vi") {
         if (notification.data.status_order == 1) {
-           return `<a
+            return `<a
             href="${notification.data.link}?read=${notification.id}">
             <li class="notification active">
                 <div class="media">
@@ -82,54 +92,54 @@ function makeNotification(notification) {
             </a>`;
         }
     } else {
-        if(notification.data.status_order == 1){
+        if (notification.data.status_order == 1) {
             return `<a
-             href="${notification.data.link}?read=${notification.id}">
-             <li class="notification active">
-                 <div class="media">
-                     <div class="media-left">
-                     </div>
-                     <div class="media-body">
-                         <strong
-                             class="notification-title">
-                             Order status update:
-                             #${notification.data.order_code}</strong>
-                         <div
-                             class="notification-meta">
-                             <small
-                                 class="timestamp">
-                                 The order has been accepted at ${notification.data.time}
-                             </small>
-                             <span class="dot unread-color"></span>
-                         </div>
-                     </div>
-                 </div>
-             </li>
-             </a>`;
-         } else {
-             return `<a
-             href="${notification.data.link}?read=${notification.id}">
-             <li class="notification active">
-                 <div class="media">
-                     <div class="media-left">
-                     </div>
-                     <div class="media-body">
-                         <strong
-                             class="notification-title">
-                             Order status update:
-                             #${notification.data.order_code}</strong>
-                         <div
-                             class="notification-meta">
-                             <small
-                                 class="timestamp">
-                                 The order was canceled at ${notification.data.time}
-                             </small>
-                             <span class="dot unread-color"></span>
-                         </div>
-                     </div>
-                 </div>
-             </li>
-             </a>`;
-         }
+            href="${notification.data.link}?read=${notification.id}">
+            <li class="notification active">
+                <div class="media">
+                    <div class="media-left">
+                    </div>
+                    <div class="media-body">
+                        <strong
+                            class="notification-title">
+                            Order status update:
+                            #${notification.data.order_code}</strong>
+                        <div
+                            class="notification-meta">
+                            <small
+                                class="timestamp">
+                                The order has been accepted at ${notification.data.time}
+                            </small>
+                            <span class="dot unread-color"></span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            </a>`;
+        } else {
+            return `<a
+            href="${notification.data.link}?read=${notification.id}">
+            <li class="notification active">
+                <div class="media">
+                    <div class="media-left">
+                    </div>
+                    <div class="media-body">
+                        <strong
+                            class="notification-title">
+                            Order status update:
+                            #${notification.data.order_code}</strong>
+                        <div
+                            class="notification-meta">
+                            <small
+                                class="timestamp">
+                                The order was canceled at ${notification.data.time}
+                            </small>
+                            <span class="dot unread-color"></span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            </a>`;
+        }
     }
 }

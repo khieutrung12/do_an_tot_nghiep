@@ -21,7 +21,7 @@
         <!-- searchbar end -->
         <!-- navicons -->
         @if (Auth::check() && Auth::user()->role_id == config('auth.roles.user'))
-            <div class="space-x-10 flex items-center justify-center">
+            <div class="space-x-10 flex items-center justify-center" style="margin-left:26px">
                 <!-- Notification -->
                 @if (Auth::check())
                     <script>
@@ -32,6 +32,9 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li class="dropdown dropdown-notifications">
+                                <audio src="{{ asset('audio/ringtone.mp3') }}"
+                                muted="muted" id="audio" controls
+                                hidden></audio>
                                 <a href="" class="dropdown-toggle"
                                     data-toggle="dropdown">
                                     <i data-count="{{ Auth::user()->unreadNotifications->count() }}"

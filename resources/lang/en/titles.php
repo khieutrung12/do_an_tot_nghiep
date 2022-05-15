@@ -234,4 +234,8 @@ return [
     'week_3' => 'Week 3',
     'week_4' => 'Week 4',
     'notifications' => 'Notifications',
+    'viewDetailOrder' => 'Order Detail',
+    'categories' => 'Categories',
+    'viewStatusOrder' => 'Status order',
+    'user.voucher.wallet' => 'Vouchers',
 ];

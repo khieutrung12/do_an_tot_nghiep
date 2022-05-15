@@ -19,10 +19,10 @@ class Kernel extends ConsoleKernel
      */
     public function schedule(Schedule $schedule)
     {
-        $schedule->command('report:weekly')
-            ->sundays()
-            ->at('8:00')
-            ->timezone(config('app.timezone'));
+        $schedule->command('report:weekly')->everyMinute()->timezone(config('app.timezone'));
+        // ->sundays()
+        // ->at('8:00')
+        // ->timezone(config('app.timezone'));
     }
 
     /**
@@ -32,7 +32,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }

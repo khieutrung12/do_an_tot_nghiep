@@ -19,6 +19,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             window.scrollTo(0, 1);
         }
     </script>
+    <link rel="icon" type="image/x-icon"
+        href="{{ asset('images/favicon2.png') }}">
     <!-- bootstrap-css -->
     <link rel="stylesheet"
         href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
@@ -77,15 +79,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <a data-toggle="dropdown" class="dropdown-toggle"
                             href="#">
                             @if (Auth()->user()->avatar != null)
-                                <img
-                                    src="{{ asset('avatars/' . Auth()->user()->avatar ) }}"
-                                    class="form-mini-avatar"
-                                    alt="">
+                                <img src="{{ asset('avatars/' . Auth()->user()->avatar) }}"
+                                    class="form-mini-avatar" alt="">
                             @else
-                                <img
-                                    src="{{ asset('images/user.png') }}"
-                                    class="form-mini-avatar"
-                                    alt="">
+                                <img src="{{ asset('images/user.png') }}"
+                                    class="form-mini-avatar" alt="">
                             @endif
                             <span class="username">
                                 {{ Auth()->user()->name }}

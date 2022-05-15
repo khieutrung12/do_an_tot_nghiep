@@ -235,4 +235,8 @@ return [
     'week_3' => 'Tuần 3',
     'week_4' => 'Tuần 4',
     'notifications' => 'Thông báo',
+    'viewDetailOrder' => 'Chi tiết đơn hàng',
+    'categories' => 'Danh mục',
+    'viewStatusOrder' => 'Trạng thái đơn hàng',
+    'user.voucher.wallet' => 'Mã giảm giá',
 ];
